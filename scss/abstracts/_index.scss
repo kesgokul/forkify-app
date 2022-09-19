@@ -1,0 +1,20 @@
+$color-primary: #f38e82;
+$color-gradients-1: #fbdb89;
+$color-gradients-2: #f48982;
+
+$color-grey-light-1: #f9f5f3; // Light background
+$color-grey-light-2: #f2efee;
+$color-grey-light-3: #d3c7c3; // Light text (place holder)
+$color-grey-dark-1: #615551; // text color
+$color-grey-dark-2: #918581; // lighter text color
+
+$gradient: linear-gradient(
+  to right bottom,
+  $color-gradients-1,
+  $color-gradients-2
+);
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

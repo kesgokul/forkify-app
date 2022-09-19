@@ -1,0 +1,16 @@
+@use "../abstracts/index" as *;
+.app {
+  width: clamp(35rem, 90%, 120rem);
+  height: auto;
+  min-height: 120vh;
+  margin: 1rem auto;
+  background-color: $color-grey-light-1;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(97, 85, 81, 0.2);
+  //   border-radius: 50%;
+}
+
+@media only screen and (min-width: 900px) {
+  .app {
+    margin: 5rem auto;
+  }
+}

@@ -1,0 +1,138 @@
+@use "../abstracts/index" as *;
+
+.recepie {
+  padding-top: 2rem;
+  position: relative;
+  width: min(100%, 80rem);
+  margin: 0 auto;
+  translate: 0 -30rem;
+  overflow: scroll;
+  transform: translateY(-35rem);
+  transition: translate 0.5s ease-in;
+}
+.search-results-active {
+  transform: translateY(0);
+}
+.recepie__figure {
+  //   width: 100%;
+  //   height: 25rem;
+  @include size(100%, 25rem);
+  position: relative;
+  .recepie__img {
+    object-fit: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  .img-filter {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: $gradient;
+    opacity: 0.5;
+    //   z-index: -1;
+  }
+  .recepie__title {
+    font-size: clamp(2rem, 2.5vw, 3.1rem);
+    font-weight: 700;
+    color: $color-grey-light-1;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: skewY(-6deg);
+    translate: -50% 20%;
+    span {
+      box-decoration-break: clone;
+      background-image: $gradient;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.recepie__details {
+  padding-top: 5rem;
+  margin-bottom: 2rem;
+  padding-inline: 2.5rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-grey-light-1;
+
+  .recepie__info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1.2rem, 1.3vw, 1.7rem);
+    &-icon {
+      fill: $color-primary;
+      @include size(2rem);
+    }
+    &-data {
+      font-weight: bold;
+    }
+    &-text {
+      text-transform: uppercase;
+    }
+    .btn--tiny {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        fill: $color-primary;
+        @include size(2rem);
+      }
+    }
+  }
+  .btn-bookmark {
+    background: none;
+    border: none;
+    cursor: pointer;
+    svg {
+      stroke: $color-primary;
+      fill: none;
+      @include size(2.2rem);
+    }
+    &--active {
+      svg {
+        fill: $color-primary;
+      }
+    }
+  }
+}
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+  svg {
+    fill: $color-primary;
+    width: 6rem;
+    height: 6rem;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .recepie {
+    padding: 0;
+    transform: translateY(0);
+    height: 100%;
+  }
+  .recepie__figure {
+    padding: 0;
+    height: 35rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

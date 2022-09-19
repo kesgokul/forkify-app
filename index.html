@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forkify App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scss/main.scss" />
+    <script type="module" src="/js/controller.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <nav class="nav">
+        <img src="img/logo.png" alt="Forkify logo" class="logo" />
+        <form class="search-form">
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Search recepies"
+          />
+          <button class="search__btn" type="submit">
+            <svg class="search__icon">
+              <use href="img/icons.svg#icon-search"></use>
+            </svg>
+            <span>search<span>
+          </button>
+        </form>
+        <div class="features">
+          <button class="features__btn features__btn-add-recepie">
+            <svg class="features__icon">
+              <use href="img/icons.svg#icon-edit"></use>
+            </svg>
+            <span class="features__title">Add recepie</span>
+          </button>
+
+          <button class="features__btn features__btn-bookmark">
+            <svg class="features__icon">
+              <use href="img/icons.svg#icon-bookmark"></use>
+            </svg>
+            <span class="features__title">Bookmarks</span>
+          </button>
+          <div class="bookmarks">
+            <ul class="bookmarks-list">
+              <!-- <li class="bookmarks__row" data-id="">
+                <a href="#" class="bookmark-link">
+                  <figure class="bookmark-img">
+                    <img
+                      src="./img/pizza-preview.jpg"
+                      alt="recepie preview image"
+                      
+                    />
+                  </figure>
+                  <div class="bookmark-link-data">
+                    <h4 class="bookmark-data-title">
+                      Cauliflower fucling Pizza
+                    </h4>
+                    <p class="bookmark-data-author">closet cooking</p>
+                  </div>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section class="main-container">
+        <div class="search-results">
+          <ul class="results">
+            
+        </ul>
+        <div class="pagination">
+          <!-- <button class="btn-pag btn-pag--prev">&leftarrow; Page 1</button>
+          <button class="btn-pag btn-pag--next">Page 3 &rightarrow;</button> -->
+        </div>
+        </div>
+        <div class="recepie">
+          <!-- <figure class="recepie__figure">
+            <img src="/img/pizza-banner.jpg" alt="" class="recepie__img">
+            <div class="img-filter"></div>
+            <h1 class="recepie__title">
+              <span>Cauliflower Pizza crust (with mozzerella cheese)</span>
+            </h1>
+          </figure>
+          <div class="recepie__details">
+            <div class="recepie__info">
+              <svg class="recepie__info-icon">
+                <use href="img/icons.svg#icon-clock"></use>
+              </svg>
+              <span class="recepie__info-data recepie__info-data--minutes"
+                >45</span
+              >
+              <span class="recepie__info-text">minutes</span>
+            </div>
+            <div class="recepie__info">
+              <svg class="recepie__info-icon">
+                <use href="img/icons.svg#icon-users"></use>
+              </svg>
+              <span class="recepie__info-data recepie__info-data--people">4</span>
+              <span class="recepie__info-text">servings</span>
+
+              <div class="recepie__info-buttons">
+                <button class="btn--tiny btn--increase-servings">
+                  <svg>
+                    <use href="img/icons.svg#icon-minus-circle"></use>
+                  </svg>
+                </button>
+                <button class="btn--tiny btn--increase-servings">
+                  <svg>
+                    <use href="img/icons.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button class="btn-bookmark">
+              <svg class="">
+                <use href="img/icons.svg#icon-bookmark-fill"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="ingredients">
+            <h1 class="ingredients__title">Recepie Ingredients</h1>
+            <ul class="ingredients-list">
+              <li class="ingredient">
+                <svg class="ingredient__icon">
+                  <use href="img/icons.svg#icon-check"></use>
+                </svg>
+                <div class="ingredient__quantity">1000</div>
+                <div class="ingredient__desc">
+                  <span class="ingredient__unit">g</span>
+                  
+medium head cauliflower cut into florets 
+                </div>
+              </li>
+              <li class="ingredient">
+                <svg class="ingredient__icon">
+                  <use href="img/icons.svg#icon-check"></use>
+                </svg>
+                <div class="ingredient__quantity">1000</div>
+                <div class="ingredient__desc">
+                  <span class="ingredient__unit">g</span>
+                  Pizza
+                </div>
+              </li>
+              <li class="ingredient">
+                <svg class="ingredient__icon">
+                  <use href="img/icons.svg#icon-check"></use>
+                </svg>
+                <div class="ingredient__quantity">1000</div>
+                <div class="ingredient__desc">
+                  <span class="ingredient__unit">g</span>
+                  pasta
+                </div>
+              </li>
+              <li class="ingredient">
+                <svg class="ingredient__icon">
+                  <use href="img/icons.svg#icon-check"></use>
+                </svg>
+                <div class="ingredient__quantity">1000</div>
+                <div class="ingredient__desc">
+                  <span class="ingredient__unit">g</span>
+                  pasta
+                </div>
+              </li>
+              <li class="ingredient">
+                <svg class="ingredient__icon">
+                  <use href="img/icons.svg#icon-check"></use>
+                </svg>
+                <div class="ingredient__quantity">1000</div>
+                <div class="ingredient__desc">
+                  <span class="ingredient__unit">g</span>
+                  pasta
+                </div>
+              </li>
+              <li class="ingredient">
+                <svg class="ingredient__icon">
+                  <use href="img/icons.svg#icon-check"></use>
+                </svg>
+                <div class="ingredient__quantity">1000</div>
+                <div class="ingredient__desc">
+                  <span class="ingredient__unit">g</span>
+                  pasta
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="direction">
+            <h2 class="direction__header">How to cook it</h2>
+            <p class="direction__desc">
+              This recepie was carefully designed and tested by
+              <span class="direction__author">Closet cooking</span>
+              Please check out the directions at their website.
+            </p>
+            <button class="direction__btn">Directions &rightarrow;</button>
+          </div> -->
+        </div>
+      </section>
+      
+    </main>
+    <div class="overlay">
+      <div class="form-container">
+        <button class="btn-close-modal-upload">X</button>
+        <form  class="upload-form">
+        <div class="upload-column">
+          <h1 class="upload-title">Recepie Data</h1>
+          <label for="title" class="upload-label">Title</label>
+          <input name="title" class="upload-input" value="My Pizza hahahaaha" type="text">
+          <label for="url" class="upload-label">URL</label>
+          <input name="url" class="upload-input" value="www.myrecepie.com/recepie" type="url">
+          <label for="image-url" class="upload-label">Image URL</label>
+          <input name="image" class="upload-input" value="www.images.com/image" type="url">
+          <label for="publisher" class="upload-label">Publisher</label>
+          <input name="publisher" class="upload-input" value="Nemo" type="text">
+          <label for="prep-time" class="upload-label">Prep time</label>
+          <input name="CookingTime" class="upload-input" value="30" type="number" placeholder="in minutes">
+          <label for="servings" class="upload-label">Servings</label>
+          <input name="servings" class="upload-input" value="5" type="number">
+        </div>
+        <div class="upload-column">
+          <h1 class="upload-title">Ingredients</h1>
+          <label for="ingredient-1" class="upload-label">Ingredient 1</label>
+          <input name="ingredient-1" type="text" class="upload-input" placeholder="quantity,unit,description" value="0.5,kg,rice">
+          <label for="ingredient-2" class="upload-label">Ingredient 2</label>
+          <input name="ingredient-2" type="text" class="upload-input" placeholder="quantity,unit,description" value="1,,avocado">
+          <label for="ingredient-3" class="upload-label">Ingredient 3</label>
+          <input name="ingredient-3" type="text" class="upload-input" placeholder="quantity,unit,description" value=",,salt">
+          <label for="ingredient-4" class="upload-label">Ingredient 4</label>
+          <input name="ingredient-4" type="text" class="upload-input" placeholder="quantity,unit,description" value="">
+          <label for="ingredient-5" class="upload-label">Ingredient 5</label>
+          <input name="ingredient-5" type="text" class="upload-input" placeholder="quantity,unit,description" value="">
+          <label for="ingredient-6" class="upload-label">Ingredient 6</label>
+          <input name="ingredient-6" type="text" class="upload-input" placeholder="quantity,unit,description" value="">
+        </div>
+        <button type="submit" class="upload-btn">
+          <svg class="upload-btn-icon">
+            <use href="img/icons.svg#icon-upload-cloud"></use>
+          </svg>
+          upload
+        </button>
+      </form>
+      </div>
+    </div>
+  </body>
+  
+</html>
+

@@ -1,0 +1,122 @@
+@use "../abstracts/index" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.overlay--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.form-container {
+  position: relative;
+  z-index: 100;
+  background-color: white;
+  width: min(80%, 100rem);
+  margin: 2rem auto;
+  height: 90vh;
+  overflow: scroll;
+  //   display: none;
+}
+.btn-close-modal-upload {
+  display: flex;
+  margin-left: auto;
+  padding: 2rem 2rem 0 0;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: $color-grey-dark-1;
+  cursor: pointer;
+  &:hover {
+    color: $color-grey-dark-2;
+  }
+}
+.upload-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(40rem, 100%), 1fr));
+  justify-items: center;
+  //   place-items: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding: 1em 1.25em;
+  gap: 1rem;
+  overflow: scroll;
+  color: $color-grey-dark-1;
+}
+
+.upload-column {
+  display: grid;
+  grid-template-columns: 1fr 2.8fr;
+  gap: 1rem;
+  align-items: center;
+  //   column-gap: 0.5em;
+  justify-items: center;
+
+  .upload-title {
+    grid-column: 1/-1;
+    justify-self: start;
+  }
+  .upload-label {
+    width: 100%;
+    white-space: nowrap;
+  }
+  .upload-input {
+    justify-self: start;
+    border: 1px solid $color-grey-light-2;
+    border-radius: 1em;
+    text-align: center;
+    padding-inline: 0.2em;
+    height: 2.5em;
+    max-width: 30rem;
+    &:focus {
+      outline: 1px solid $color-grey-dark-2;
+    }
+  }
+}
+.upload-btn {
+  margin-top: 1rem;
+  padding-block: 1em;
+  justify-self: center;
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+  justify-content: center;
+  width: min(50%, 30rem);
+  height: 4rem;
+  background-image: $gradient;
+  border: none;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  //   margin: 0 auto;
+  svg {
+    width: 2em;
+    height: 2em;
+    fill: white;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .upload-form {
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .upload-column {
+    gap: 2rem;
+  }
+  .upload-btn {
+    margin-top: 2rem;
+    grid-column: 1/-1;
+  }
+}
