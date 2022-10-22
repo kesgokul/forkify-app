@@ -1,4 +1,4 @@
-# Forkify Recipes Add
+# Forkify Recipes App
 
 <sub>Disclaimer: This project was built for learning and educational purposes as a part of "The Complere JavaScript course 2022", taught by Jonas Schmedtmann.</sub>
 
